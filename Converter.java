@@ -3,6 +3,15 @@
  * and open the template in the editor.
  */
 ////Que fait Cette Classe?
+
+/*
+
+C'est un exemple d'une Applet Javacard qui fait les conversions entre USD et LBP.
+L'applet en question communique avec le simulateur JavaCard "Default Device".
+La communication est faite a travers les APDU (Hexadecimal).
+*/
+
+
 package Converter;
 
 import javacard.framework.*;
