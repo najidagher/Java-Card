@@ -2,6 +2,11 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
+ 
+ /*
+ Dans Cet exemple on a un Projet Web JavaCard.
+ Cette Classe fait la conversion entre Hexadecimal et Integer
+ */
 package HEXCONVERTER;
 
 import java.io.IOException;
