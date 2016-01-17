@@ -38,3 +38,6 @@ https://github.com/najidagher/Java-Card/issues/2
 Voici un lien repondant a plusieurs questions concernant JavaCard:
 De meme il en existe de exemples de programmation
 http://umer555.blogspot.com/
+
+Un Lien ou on peut telecharge une application opensource qui detecte les cardreaders et nous permet denvoyer et recevoir des commandes APDU entre la carte et le lecteur:
+http://www.codeproject.com/Articles/23018/How-to-access-SmartCards-simply-and-effectively
