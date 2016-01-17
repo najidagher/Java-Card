@@ -19,12 +19,15 @@ public class HEX_STR_CONVERTER extends HttpServlet {
 	  char[] chars = str.toCharArray();
 
 	  StringBuffer hex = new StringBuffer();
+          if (chars.length ==0) {return null;}
+          else
+          {
 	  for(int i = 0; i < chars.length; i++){
 	    hex.append(Integer.toHexString((int)chars[i]));
 	  }
 
 	  return hex.toString();
-  }
+  }}
 
 
   public String convertHexToString(String hex){
@@ -33,6 +36,10 @@ public class HEX_STR_CONVERTER extends HttpServlet {
 	  StringBuilder temp = new StringBuilder();
 
 	  //49204c6f7665204a617661 split into two characters 49, 20, 4c...
+          if (hex.length() ==0 )
+          { return null; }
+          else
+          {
 	  for( int i=0; i<hex.length()-1; i+=2 ){
 
 	      //grab the hex in pairs
@@ -47,6 +54,7 @@ public class HEX_STR_CONVERTER extends HttpServlet {
 	//  System.out.println("Decimal : " + temp.toString());
 
 	  return sb.toString();
+          }
   }
 
 
@@ -62,9 +70,10 @@ public class HEX_STR_CONVERTER extends HttpServlet {
              String hexstring = request.getParameter("hex");
              String ascstring = request.getParameter("asc");
              String Decstring = request.getParameter("dec");
-             int DecNumber = Integer.parseInt(Decstring);
+     
 
-                if ( request.getParameter("hex") != null ){
+              //  if ( request.getParameter("hex") != null ){
+             if (convertHexToString(hexstring) !=null){
                out.println("<table border=0><tr><th>ASCII  </th><th>HEXADECIMAL  </th><th>DECIMAL  </th></tr>");
                String ascaffiche =convertHexToString(hexstring);
                out.println("<tr><th>"+ascaffiche+" </th><th> "+hexstring+" </th>");
@@ -73,7 +82,8 @@ public class HEX_STR_CONVERTER extends HttpServlet {
                 }
 
 
-                if ( request.getParameter("asc") != null ){
+              //  if ( request.getParameter("asc") != null ){
+                if (convertStringToHex(ascstring) !=null){
                String hexaffiche =convertStringToHex(ascstring);
                out.println("<table border=0><tr><th>ASCII  </th><th>HEXADECIMAL  </th><th>DECIMAL  </th></tr>");
                out.println("<tr><th> "+ascstring+" </th><th> "+hexaffiche+" </th>");
@@ -86,7 +96,12 @@ public class HEX_STR_CONVERTER extends HttpServlet {
                  out.println("</th></tr></table> ");
                 }
 
-                if ( request.getParameter("dec") != null ){
+              //  if ( request.getParameter("dec") != null ){
+              if (    Decstring !=null ) {
+
+                     int DecNumber = Integer.parseInt(Decstring);
+
+
                out.println("<table border=0><tr><th>ASCII  </th><th>HEXADECIMAL  </th><th>DECIMAL  </th></tr>");
                String hexadecimal = Integer.toHexString(DecNumber);
                char ascidec  =(char)DecNumber;             
@@ -96,7 +111,8 @@ public class HEX_STR_CONVERTER extends HttpServlet {
                 }
  
             out.println("</body></html>");
-        } finally {
+         }
+        finally {
             out.close();
         }
     }
