@@ -1,4 +1,6 @@
-# Java-Card
+# Java-Card-SMB 2014-2016
+NAJI DAGHER DAGHER 9483F
+
 Projet-Smb214-216
 Voici le plan:
  
